@@ -11,6 +11,6 @@ urlpatterns = [
     path('create-task/', CreateTask.as_view(), name="create-task"),
     path('update-task/<int:pk>/', UpdateTask.as_view(), name="update-task"),
     path('delete-task/<int:pk>/', DeleteTask.as_view(), name="delete-task"),
-    path('task-completed/<int:pk>/', mark_as_done, name="task-completed"),
+    path('task-status/<int:pk>/', task_status, name="task-status"),
 
 ]

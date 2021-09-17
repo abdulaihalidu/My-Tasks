@@ -94,10 +94,18 @@ class DeleteTask(LoginRequiredMixin, DeleteView):
 # know how to implement that with a class-based view
 
 
-def mark_as_done(request, pk):
+def task_status(request, pk):
     selected_task = Task.objects.get(id=pk)
     if selected_task != None:
-        selected_task.task_completed = True
-        selected_task.save()
-        return redirect('tasks')
-    return redirect('tasks')
+        if selected_task.task_completed == False:
+            selected_task.task_completed = True
+            selected_task.save()
+            return redirect('tasks')
+        else:
+            selected_task.task_completed = False
+            selected_task.save()
+            return redirect('tasks')
+    context = {
+        'task': selected_task
+    }
+    return render(request, 'tasks/task_details.html', context)

@@ -2,7 +2,11 @@
 {% block content %}
 <div class="view-header-bar">
     <a href="{% url 'tasks' %}">&#8592;Back</a>
-    <button id="done-btn"><a href="{% url 'task-completed' task.id %}">Mark as Completed &#10004;</a></button>
+    {% if task.task_completed %}
+        <button id="done-btn"><a href="{% url 'task-status' task.id %}">Unmark as Completed &#215;</a></button>
+    {% else %}
+        <button id="done-btn"><a href="{% url 'task-status' task.id %}">Mark as Completed &#10004;</a></button>
+    {% endif %}
 </div>
 <div class="card-body">
     <h3>{{task.title}}</h3>
