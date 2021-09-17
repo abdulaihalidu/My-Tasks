@@ -1,0 +1,11 @@
+{% extends 'tasks/index.html' %}
+{% block content %}
+<div class="view-header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Back</a>
+    <button id="done-btn"><a href="{% url 'task-completed' task.id %}">Mark as Completed &#10004;</a></button>
+</div>
+<div class="card-body">
+    <h3>{{task.title}}</h3>
+    <p><strong>{{task.description}}</strong></p>
+ </div>
+{% endblock content %}

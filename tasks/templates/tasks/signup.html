@@ -1,0 +1,19 @@
+{% extends 'tasks/index.html' %}
+{% block content %}
+<div class="signup-header-bar">
+    <h1>Sign Up</h1>
+</div>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{ form.username }}
+        <label>{{form.password1.label}}</label>
+        {{ form.password1 }}
+        <label>{{form.password2.label}}</label>
+        {{ form.password2 }}
+        <input class="button" id="signup-btn" type="submit" value="Sign Up">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+    {% endblock content %}
