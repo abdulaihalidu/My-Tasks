@@ -163,6 +163,7 @@ input {
   text-decoration: none;
   font-size: 42px;
   text-shadow: 1px 1px #81413b;
+  margin-left: 20px;
 }
 
 #search-add-wrapper {
@@ -206,6 +207,8 @@ label {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .card-body {
@@ -215,6 +218,7 @@ label {
 .search-form {
   margin-top: 20px;
   display: flex;
+  margin-left: 10px;
 }
 #signup-btn {
   margin-top: 10px;
